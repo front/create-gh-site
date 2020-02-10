@@ -10,7 +10,7 @@
     "compile:jekyll": "bundle exec jekyll serve -w",
     "compile:scripts": "webpack --mode=production --watch",
     "compile": "run-p compile:*",
-    "browsersync": "browser-sync start server -p http://127.0.0.1:4000 -f='_site/css/**.css, _site/**/*.html' --no-ghost-mode --port 6000",
+    "browsersync": "browser-sync start server -p http://127.0.0.1:4000 -f='_site/css/**.css, _site/**/*.html' --no-ghost-mode --port 6060",
     "dev": "run-p compile browsersync",
     "build:scripts": "webpack --mode=production",
     "build": "run-p build:*"

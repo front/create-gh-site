@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ page.title }} | Site Name</title>
+    <meta name="description" content="A short description of this site">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/print.css" rel="stylesheet" media="print" type="text/css">
+    <script>
+      // IE specific styling
+      if(window.navigator.userAgent.indexOf('Trident') > 0) {
+        document.write('<link href="/css/ie.css" rel="stylesheet" type="text/css">');
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="skip-main"><a href="#main-content">Jump to main content</a></nav>
+
+    <header class="header"></header>
+
+    <main id="main-content">{{ content }}</main>
+
+    <footer class="footer"></footer>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
