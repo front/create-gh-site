@@ -1,0 +1,9 @@
+{
+  "short_name": "site-name",
+  "name": "Site Name",
+  "description": "A short description of this site",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#FFFFFF",
+  "background_color": "#000000"
+}

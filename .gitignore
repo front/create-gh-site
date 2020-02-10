@@ -1,0 +1,9 @@
+# Include the site specific ignores in this file
+
+_site
+.sass-cache
+.jekyll-metadata
+.bundle/ruby
+
+node_modules
+package-lock.json
