@@ -35,5 +35,11 @@
     "postcss-cli": "^7.1.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not ie 10",
+    "not ie_mob 10",
+    "not op_mini all"
+  ]
 }
