@@ -1,0 +1,59 @@
+// Fonts families
+
+$font-family-sans:  Helvetica, Arial, sans-serif;
+$font-family-icon:  'icomoon';
+
+
+// Colors
+
+$color-black:        #000000;
+$color-white:        #FFFFFF;
+
+$color-gray:         #333333;
+
+$color-blue:         #006EB6;
+$color-red:          #EF403B;
+
+$color-bg:           $color-white;
+$color-text:         $color-gray;
+
+
+// Breakpoints
+
+$break-mobile:      480px;
+$break-tablet:      768px;
+$break-desktop:     1024px;
+$break-wide:        1440px;
+
+
+// Dimensions
+
+$content-width:     1160px;
+$content-wide:      1600px;
+$content-narrow:     760px;
+$spacing-unit:        40px;
+
+
+// Font sizes
+
+$font-size-h1: (
+  sm: 28px, md: 48px, lg: 54px,
+);
+$font-size-h2: (
+  sm: 24px, md: 28px, lg: 34px,
+);
+$font-size-h3: (
+  sm: 19px, md: 24px, lg: 28px,
+);
+$font-size-h4: (
+  sm: 17px, md: 18px, lg: 24px,
+);
+$font-size-normal: (
+  sm: 16px, md: 18px, lg: 22px,
+);
+$font-size-small: (
+  sm: 14px, md: 16px, lg: 18px,
+);
+$font-size-tiny: (
+  sm: 12px, md: 14px, lg: 16px,
+);

@@ -1,0 +1,9 @@
+@media print {
+  * {
+    overflow: visible !important; }
+  body {
+    -webkit-print-color-adjust: exact !important;
+            color-adjust: exact !important;
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 14px; } }

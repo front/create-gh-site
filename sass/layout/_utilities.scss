@@ -1,0 +1,75 @@
+
+// Alignment classes
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+
+.pull-right, .alignright {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.pull-left, .alignleft {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+.aligncenter {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center, .center {
+  text-align: center;
+}
+.text-middle, .middle {
+  vertical-align: middle;
+}
+
+
+
+// Margin and padding classes
+@for $i from 0 through 12 {
+  .mt-#{$i} {
+    margin-top: $i*10px !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: $i*10px !important;
+  }
+  .mv-#{$i} {
+    margin-top: $i*10px !important;
+    margin-bottom: $i*10px !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: $i*10px !important;
+  }
+  .mr-#{$i} {
+    margin-right: $i*10px !important;
+  }
+  .mh-#{$i} {
+    margin-left: $i*10px !important;
+    margin-right: $i*10px !important;
+  }
+
+  .pt-#{$i} {
+    padding-top: $i*10px !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: $i*10px !important;
+  }
+  .pv-#{$i} {
+    padding-top: $i*10px !important;
+    padding-bottom: $i*10px !important;
+  }
+}

@@ -1,0 +1,59 @@
+
+$grid-columns:  12;
+$grid-gutter:   $spacing-unit / $content-width * 100%;  // $spacing-unit at full width
+
+
+@mixin grid ($prefix) {
+  @for $i from 1 through $grid-columns {
+    &.#{$prefix}columns-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  @for $c from 1 through $grid-columns {
+    .#{$prefix}col-span-#{$c} {
+      grid-column: span #{$c};
+    }
+    .#{$prefix}col-start-#{$c} {
+      grid-column-start: #{$c};
+    }
+    .#{$prefix}col-end-#{$c} {
+      grid-column-end: #{$c};
+    }
+  }
+
+  @for $r from 1 through 5 {
+    .#{$prefix}row-span-#{$r} {
+      grid-row: span #{$r};
+    }
+  }
+}
+
+
+.row {
+  display: grid;
+  grid-column-gap: $grid-gutter;
+  grid-row-gap: 0;
+
+  &.double-gap {
+    grid-column-gap: 2 * $grid-gutter;
+  }
+  &.no-gap {
+    grid-column-gap: 0;
+  }
+  &.row-gap {
+    grid-row-gap: $spacing-unit;
+  }
+
+  @include narrow {
+    @include grid('s-');
+  }
+
+  @include tablet {
+    @include grid('');
+  }
+
+  @include desktop {
+    @include grid('l-');
+  }
+}

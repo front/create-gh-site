@@ -1,0 +1,43 @@
+
+// Global Visibility
+.visually-hidden { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.hidden, [hidden] {
+  display: none !important;
+}
+
+.block {
+  display: block;
+}
+.i-block {
+  display: inline-block;
+}
+
+
+// Responsive Visibility
+.mobile-only {
+ @include overmobile {
+    display: none !important;
+  }
+}
+.narrow-only {
+  @include tablet {
+    display: none !important;
+  }
+}
+.tablet-only {
+  @include narrow {
+    display: none !important;
+  }
+}
+.desktop-only {
+  @include underdesktop {
+    display: none !important;
+  }
+}

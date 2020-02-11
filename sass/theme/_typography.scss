@@ -1,0 +1,103 @@
+// Default headings
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: $spacing-unit / 4;
+
+  @include tablet {
+    margin-bottom: $spacing-unit / 2;
+  }
+
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1,
+.text-h1 {
+  @include font-size($font-size-h1);
+}
+h2,
+.text-h2 {
+  @include font-size($font-size-h2);
+}
+h3,
+.text-h3 {
+  @include font-size($font-size-h3);
+}
+h4,
+.text-h4 {
+  @include font-size($font-size-h4);
+}
+
+
+// Default paragraphs
+p {
+  margin-top: 0;
+  margin-bottom: $spacing-unit / 4;
+
+  @include tablet {
+    margin-bottom: $spacing-unit / 2;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+// Text size variations
+.text-xlarge,
+.has-huge-font-size,
+.is-style-text-xlarge {
+  @include font-size($font-size-h2);
+}
+
+.text-large,
+.has-large-font-size,
+.is-style-text-large {
+  @include font-size($font-size-h3);
+}
+
+.text-normal,
+.has-normal-font-size,
+.is-style-text-normal {
+  @include font-size($font-size-normal);
+}
+
+.text-small,
+.has-small-font-size,
+.is-style-text-small {
+  @include font-size($font-size-small);
+}
+
+.text-xsmall,
+.has-tiny-font-size,
+.is-style-text-xsmall {
+  @include font-size($font-size-tiny);
+}
+
+
+// Font weight variations
+.text-weight-normal {
+  font-weight: 400;
+}
+
+.text-weight-bold {
+  font-weight: 700;
+}
+
+
+// Text color variations
+.text-black,
+.is-style-text-black {
+  color: $color-text;
+}
+
+.text-blue,
+.is-style-text-blue {
+  color: $color-blue;
+}
+
+.text-red,
+.is-style-text-red {
+  color: $color-red;
+}

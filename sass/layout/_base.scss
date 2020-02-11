@@ -1,0 +1,19 @@
+
+.clearfix {
+  &::after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+
+// Containers
+.wrapper {
+  width: 100%;
+  max-width: $content-width + $spacing-unit;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-unit/2;
+  padding-right: $spacing-unit/2;
+}

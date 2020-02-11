@@ -1,0 +1,21 @@
+
+// Skip to content link
+.skip-to-content {
+  position: relative;
+  background-color: $color-white;
+
+  a {
+    display: block;
+    height: 0;
+    opacity: 0;
+    text-align: center;
+
+    &:focus, &:active {
+      margin: 0 auto;
+      padding: 2px 0 5px;
+      width: 300px;
+      height: auto;
+      opacity: 1;
+    }
+  }
+}

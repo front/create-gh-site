@@ -1,0 +1,89 @@
+
+// Breakpoint mixins
+@mixin mobile {
+  @media (max-width: ($break-mobile - 1px)) {
+    @content;
+  }
+}
+@mixin overmobile {
+  @media (min-width: $break-mobile) {
+    @content;
+  }
+}
+@mixin narrow {
+  @media (max-width: ($break-tablet - 1px)) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: $break-tablet) {
+    @content;
+  }
+}
+@mixin underdesktop {
+  @media (max-width: ($break-desktop - 1px)) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $break-desktop) {
+    @content;
+  }
+}
+@mixin wide {
+  @media (min-width: $break-wide) {
+    @content;
+  }
+}
+
+
+// Responsive font sizes
+@mixin font-size($map) {
+  @include underdesktop {
+    font-size: map-get($map, 'sm');
+  }
+  @include desktop {
+    font-size: map-get($map, 'md');
+  }
+  // @include wide {
+  //   font-size: map-get($map, 'lg');
+  // }
+}
+
+
+// Match icons
+@mixin icons {
+  [class^="icon-"], [class*=" icon-"] {
+    @content;
+  }
+}
+
+
+// Match basic inputs
+@mixin inputs {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="date"],
+  input[type="number"],
+  textarea,
+  select {
+    @content;
+  }
+}
+
+
+// Helpers to match MS browsers
+@mixin msie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+@mixin edge {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
