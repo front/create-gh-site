@@ -3,6 +3,7 @@
   "description": "A short description of this site",
   "version": "1.0.0",
   "author": "Frontkom",
+  "private": true,
   "scripts": {
     "sass:build": "node-sass sass -o .css -w --output-style nested",
     "sass:prefix": "postcss .css/*.css -d css/ --use autoprefixer --watch --no-map",
@@ -11,7 +12,7 @@
     "compile:scripts": "webpack --mode=production --watch",
     "compile": "run-p compile:*",
     "browsersync": "browser-sync start server -p http://127.0.0.1:4000 -f='_site/css/**.css, _site/**/*.html' --no-ghost-mode --port 6060",
-    "dev": "run-p compile browsersync",
+    "start": "run-p compile browsersync",
     "build:scripts": "webpack --mode=production",
     "build": "run-p build:*"
   },
