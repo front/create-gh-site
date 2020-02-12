@@ -1,1 +1,12 @@
 # Place here your Jekyll configuration
+
+exclude:
+  - README.md
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - sass/
+  - src/
