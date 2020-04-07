@@ -1,18 +1,19 @@
 // Grid spec for IE 10/11
 
 $grid-columns:  12;
+$gutter:  $spacing-unit / $content-width * 100%;
+
 
 @mixin ms-grid ($prefix, $space) {
-  $gutter: $space / $content-width * 100%;
 
   @for $i from 1 through $grid-columns {
-    $col-width: (100% + $gutter) / $i;
+    $col-width: (100% + $space) / $i;
 
-    &.#{$prefix}columns-#{$i} {
+    &.grid--#{$prefix}cols-#{$i} {
       & > * {
         float: left;
-        width: $col-width - $gutter;
-        margin-right: $gutter;
+        width: $col-width - $space;
+        margin-right: $space;
 
         &:nth-child(#{$i}n + 1) {
           clear: both;
@@ -20,25 +21,26 @@ $grid-columns:  12;
         &:not(:nth-child(#{$i}n + 1)) {
           clear: none;
         }
-        &:nth-child(#{$i}n + #{$i}), &:last-child {
+        &:nth-child(#{$i}n + #{$i}),
+        &:last-child {
           margin-right: 0;
         }
       }
 
       @for $sp from 1 through $i {
-        & > .#{$prefix}col-span-#{$sp} {
-          width: ($sp * $col-width) - $gutter;
+        & > .#{$prefix}col--span-#{$sp} {
+          width: ($sp * $col-width) - $space;
         }
       }
 
       @for $start from 1 through $i {
-        & > .#{$prefix}col-start-#{$start} {
+        & > .#{$prefix}col--start-#{$start} {
           clear: both;
           margin-left: (($start - 1) * $col-width);
 
           @for $end from ($start + 1) through $i {
-            &.#{$prefix}col-end-#{$end} {
-              width: (($end - $start) * $col-width) - $gutter;
+            &.#{$prefix}col--end-#{$end} {
+              width: (($end - $start) * $col-width) - $space;
             }
           }
         }
@@ -48,7 +50,22 @@ $grid-columns:  12;
 }
 
 
-.row {
+@mixin ms-set($space) {
+  @include ms-grid("", $space);
+
+  @include narrow {
+    @include ms-grid("s-", $space);
+  }
+  @include tablet {
+    @include ms-grid("m-", $space);
+  }
+  @include desktop {
+    @include ms-grid("l-", $space);
+  }
+}
+
+
+.grid {
   display: block !important;
 
   &::after {
@@ -57,36 +74,35 @@ $grid-columns:  12;
     clear: both;
   }
 
-  &.row-gap > * {
-    margin-bottom: $spacing-unit * 2/3;
+
+  // Gaps
+  &--row-gap > * {
+    margin-bottom: $spacing-unit;
+  }
+  &--row-gap--x2 > * {
+    margin-bottom: $spacing-unit * 2;
   }
 
-  @include narrow {
-    @include ms-grid("s-", $spacing-unit * 2/3);
-  }
-  @include tablet {
-    @include ms-grid("", $spacing-unit);
-  }
-  @include desktop {
-    @include ms-grid("l-", $spacing-unit);
+
+  // Grid spec
+  @include ms-set(0%);
+
+  &.grid--col-gap {
+    @include ms-set($gutter);
   }
 
-  &.no-gap {
-    @include narrow {
-      @include ms-grid("s-", 0px);
-    }
-    @include tablet {
-      @include ms-grid("", 0px);
-    }
-    @include desktop {
-      @include ms-grid("l-", 0px);
-    }
+  &.grid--col-gap--x2 {
+    @include ms-set($gutter * 2);
   }
 
+
+  // Helpers
   .ie-omega {
     margin-right: 0 !important;
   }
-
+  .ie-no-clear {
+    clear: none !important;
+  }
   .ie-right {
     @include tablet {
       float: right;
